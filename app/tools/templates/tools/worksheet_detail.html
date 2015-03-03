@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	
+<h1>Worksheet</h1>
+
+	{% with object.get_translation as ob %}
+    <h2>{{ob}}</h2>
+    <p>{{ob.description}}</p>
+
+    <p>
+    	<a href="{{ob.pdf}}">download the pdf</a>
+    </p>
+
+
+    <h4>Related worksheets</h4>
+
+    {% for w in object.related_worksheets %}
+		<li>
+			<a href="{% url 'worksheet' w.slug %}">{{w}}</a>
+		</li>
+	{% endfor %}
+
+
+    <h4>Worksheet is designed for these problems</h4>
+    <ul>
+    {% for i in object.problems.all %}
+	<li><a href="{% url 'problem' i.slug %}">{{i}}</a> </li>
+	{% endfor %}
+	</ul> 
+
+    {% endwith %}
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+<h1>List of problems</h1>
+
+<ul>
+{% for i in object_list %}
+<li><a href="{% url 'problem' i.slug %}">{{i}}</a> </li>
+{% endfor %}
+
+</ul>
+
+{% endblock content %}

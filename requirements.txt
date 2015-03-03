@@ -1,0 +1,7 @@
+Django==1.8a1
+boto==2.36.0
+dj-database-url==0.3.0
+django-baker==0.11
+django-storages==1.1.8
+waitress==0.8.9
+wsgiref==0.1.2

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	
+    <h1>Problem landing page</h1>
+
+	{% with object.get_translation as ob %}
+    <h2>{{ob.name}}</h2>
+    
+
+    <ul>
+
+    	{% for w in object.worksheet_set.all %}
+    		<li>
+    			<a href="{% url 'worksheet' w.slug %}">{{w}}</a>
+    		</li>
+    	{% endfor %}
+    </ul>
+
+
+    <hr>
+
+    You could have other linked content types here, e.g. papers.
+
+    {% endwith %}
+{% endblock content %}
