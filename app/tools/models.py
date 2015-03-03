@@ -36,7 +36,7 @@ class Worksheet(TranslatableModel):
 class WorksheetTranslation(get_translation_model(Worksheet, "worksheet")):
 	title = models.CharField(max_length=255)	
 	description = models.TextField()
-	pdf = models.FileField(upload_to="uploads")
+	pdf = models.FileField(upload_to="uploads", blank=True, null=True)
 	tags = models.ManyToManyField('Tag', blank=True)
 
 	def __unicode__(self):
