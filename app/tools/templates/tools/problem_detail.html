@@ -7,9 +7,7 @@
 	{% with object.get_translation as ob %}
     <h2>{{ob.name}}</h2>
     
-
     <ul>
-
     	{% for w in object.worksheet_set.all %}
     		<li>
     			<a href="{% url 'worksheet' w.slug %}">{{w}}</a>

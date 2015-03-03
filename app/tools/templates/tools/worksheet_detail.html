@@ -8,9 +8,11 @@
     <h2>{{ob}}</h2>
     <p>{{ob.description}}</p>
 
+    {%if ob.pdf %}
     <p>
     	<a href="{{ob.pdf}}">download the pdf</a>
     </p>
+    {% endif %}
 
 
     <h4>Related worksheets</h4>
